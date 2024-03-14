@@ -42,7 +42,7 @@ function App() {
     )
   }
 
-  function getDataForm(product:any){
+  function getDataForm(product:Product){
     setDataForm(product);
     
   }

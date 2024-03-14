@@ -6,8 +6,17 @@ type ErrorType = {
     price:  string;
 }
 
+type FormData = {
+    title: string;
+    price: number;
+    description : string;
+  };
+  
+  type FormCreateProdProps = {
+    getDataForm: (data: FormData) => void;
+  };
 
-export default function FormCreateProd({getDataForm}:any) {
+export default function FormCreateProd({getDataForm}: FormCreateProdProps) {
     const [title,setTitle] = useState("");
     const [price,setprice] = useState(0);
     const [description,setdescription] = useState("");
@@ -15,7 +24,7 @@ export default function FormCreateProd({getDataForm}:any) {
     const [image,setImage] = useState("https://thumbs.dreamstime.com/b/generic-person-gray-photo-placeholder-man-silhouette-white-background-144511705.jpg")
 
     const [error,setError] = useState<ErrorType>({
-        title: "default",
+        title: "",
         price: ""
 
     });
